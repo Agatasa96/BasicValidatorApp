@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+
+<form method="POST" th:object="${user}">
+    <div class="form-group">
+        <h4>Wpisz dane</h4>
+
+        <label >Imię </label>
+        <input class="form-control" type="text" th:field="*{userName}"/>
+        <label>Pesel: </label>
+        <input class="form-control" type="text" th:field="*{pesel}"/>
+        <p th:if="${#fields.hasErrors('pesel')}" th:errors="*{pesel}"></p>
+        <label>Opis: </label>
+        <input class="form-control" type="text" th:field="*{description}"/>
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+        <br>
+        <button type="submit" class="btn btn-dark">Dodaj</button>
+    </div>
+</form>
+
+</body>
+</html>

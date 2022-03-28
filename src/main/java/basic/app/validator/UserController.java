@@ -11,20 +11,20 @@ import javax.validation.Valid;
 @Controller
 public class UserController {
 
-    @GetMapping("/register")
+    @GetMapping()
     public String userRegister(Model model) {
         model.addAttribute("user", new User());
         return "userRegister";
     }
 
-    @PostMapping("/register")
+    @PostMapping()
     public String userRegister(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "userRegister";
         }
-        System.out.println(user.pesel);
-        System.out.println(user.name);
-        System.out.println(user.description);
+        System.out.println(user.getUserName());
+        System.out.println(user.getPesel());
+        System.out.println(user.getDescription());
         return "mainPage";
     }
 }
