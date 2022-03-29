@@ -11,7 +11,7 @@
     <div class="form-group">
         <h4>Wpisz dane</h4>
 
-        <label >Imię </label>
+        <label >Imię: </label>
         <input class="form-control" type="text" th:field="*{userName}"/>
         <label>Pesel: </label>
         <input class="form-control" type="text" th:field="*{pesel}"/>
@@ -19,6 +19,10 @@
         <label>Opis: </label>
         <input class="form-control" type="text" th:field="*{description}"/>
         <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+        <br>
+        <label>Tekst zaczynający się na 'A': </label>
+        <input class="form-control" type="text" th:field="*{textThatStartWithA}"/>
+        <p th:if="${#fields.hasErrors('textThatStartWithA')}" th:errors="*{textThatStartWithA}"></p>
         <br>
         <button type="submit" class="btn btn-dark">Dodaj</button>
     </div>

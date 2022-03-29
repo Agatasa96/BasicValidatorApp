@@ -25,6 +25,7 @@ public class UserController {
         System.out.println(user.getUserName());
         System.out.println(user.getPesel());
         System.out.println(user.getDescription());
+        System.out.println(user.getTextThatStartWithA());
         return "mainPage";
     }
 }
